@@ -16,8 +16,9 @@ const marathonSlackBridge = new MarathonSlackBridge({
     marathonPort: process.env.MARATHON_PORT || 8080,
     marathonProtocol: process.env.MARATHON_PROTOCOL || "http",
     slackWebHook: process.env.SLACK_WEBHOOK_URL, // No default!
-    slackChannel: process.env.SLACK_CHANNEL || "#marathon",
-    slackBotName: process.env.SLACK_BOT_NAME || "Marathon Event Bot",
+    slackChannel: process.env.SLACK_CHANNEL, // Will use slack configuration
+    slackBotName: process.env.SLACK_BOT_NAME || null, // Will use slack configuration
+    slackBotImage: process.env.SLACK_BOT_IMAGE || null, // Will use slack configuration
     eventTypes: process.env.EVENT_TYPES || null,
     taskStatuses: process.env.TASK_STATUSES || null,
     appIdRegExes: process.env.APP_ID_REGEXES || null
